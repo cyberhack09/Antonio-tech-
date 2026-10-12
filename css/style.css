@@ -1,1 +1,2031 @@
 
+/* ========================================
+   ORBIX DIGITAL — IDENTIDAD VISUAL
+   ======================================== */
+
+:root {
+  --bg: #08111F;
+  --bg-soft: #0D1929;
+  --card: #101F30;
+  --accent: #38E2CF;
+  --accent-hover: #68F4E5;
+  --white: #F5F8FC;
+  --text: #A7B6C9;
+  --border: rgba(255, 255, 255, 0.09);
+  --radius: 20px;
+  --container: 1160px;
+  --transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* ========================================
+   ENCABEZADO Y NAVEGACIÓN
+   ======================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8, 17, 31, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  color: var(--accent);
+  font-size: 22px;
+  box-shadow: 0 0 20px rgba(56, 226, 207, 0.12);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-menu a {
+  color: var(--text);
+  font-size: 14px;
+  transition: color var(--transition);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--accent);
+}
+
+.nav-menu .nav-cta {
+  padding: 11px 19px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+.nav-menu .nav-cta:hover {
+  background: var(--accent-hover);
+  color: var(--bg);
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 19px;
+  height: 2px;
+  border-radius: 3px;
+  background: var(--white);
+  transition: var(--transition);
+}
+
+/* ========================================
+   PORTADA PRINCIPAL
+   ======================================== */
+
+.hero {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 80% 40%,
+      rgba(56, 226, 207, 0.09),
+      transparent 42%
+    ),
+    var(--bg);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  top: -300px;
+  left: -200px;
+  border: 1px solid rgba(56, 226, 207, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 45px rgba(56, 226, 207, 0.025),
+    0 0 0 90px rgba(56, 226, 207, 0.02);
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.7;
+}
+
+.hero h1 {
+  margin: 22px 0;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  font-weight: 800;
+}
+
+.hero-description {
+  max-width: 510px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 13px 21px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 8px 30px rgba(56, 226, 207, 0.12);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  border-color: var(--border);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent);
+}
+
+/* ========================================
+   MOCKUP VISUAL DE LA WEB
+   ======================================== */
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  padding: 30px 5px;
+}
+
+.visual-glow {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(56, 226, 207, 0.13);
+  filter: blur(85px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.browser-card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid rgba(56, 226, 207, 0.22);
+  border-radius: 17px;
+  background: #0D1A2B;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.28);
+  transform: perspective(1000px) rotateY(-5deg);
+  animation: float 6s ease-in-out infinite;
+}
+
+.browser-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.browser-dots span {
+  width: 7px;
+  height: 7px;
+  background: #405166;
+  border-radius: 50%;
+}
+
+.browser-dots span:first-child {
+  background: #FF827B;
+}
+
+.browser-dots span:nth-child(2) {
+  background: #F8CF67;
+}
+
+.browser-dots span:nth-child(3) {
+  background: #38D9A9;
+}
+
+.browser-label {
+  color: #6F849D;
+  font-size: 10px;
+}
+
+.mockup-content {
+  padding: 32px 25px 25px;
+}
+
+.mockup-tag {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1px solid rgba(56, 226, 207, 0.2);
+  border-radius: 5px;
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.mockup-content h2 {
+  max-width: 330px;
+  margin-top: 20px;
+  font-size: clamp(23px, 3vw, 34px);
+  line-height: 1.3;
+  letter-spacing: -1px;
+}
+
+.mockup-content > p {
+  margin-top: 12px;
+  color: var(--text);
+  font-size: 11px;
+}
+
+.mockup-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
+  padding: 10px 13px;
+  background: var(--accent);
+  border-radius: 6px;
+  color: var(--bg);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.mockup-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.mockup-line {
+  display: block;
+  width: 110px;
+  height: 5px;
+  margin-bottom: 7px;
+  border-radius: 5px;
+  background: #304259;
+}
+
+.mockup-line.short {
+  width: 70px;
+  background: #1F3546;
+}
+
+.mockup-orbit {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 25px;
+  box-shadow: 0 0 30px rgba(56, 226, 207, 0.1);
+}
+
+.floating-badge {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #132237;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  font-size: 11px;
+  font-weight: 700;
+  animation: float 5s ease-in-out infinite;
+}
+
+.badge-top {
+  top: 0;
+  right: -10px;
+}
+
+.badge-bottom {
+  bottom: 0;
+  left: -20px;
+  animation-delay: -2.5s;
+}
+
+.badge-symbol {
+  color: var(--accent);
+  font-size: 17px;
+}
+
+/* ========================================
+   ENCABEZADOS DE SECCIÓN
+   ======================================== */
+
+.section-heading {
+  max-width: 670px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.section-heading h2,
+.contact-box h2 {
+  margin-top: 15px;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -1.2px;
+}
+
+.section-heading > p {
+  margin-top: 15px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* ========================================
+   SERVICIOS
+   ======================================== */
+
+.services {
+  background: #0A1524;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  position: relative;
+  padding: 30px 25px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.008)
+  );
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(56, 226, 207, 0.4);
+  background: #101F30;
+}
+
+.service-icon {
+  width: 51px;
+  height: 51px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(56, 226, 207, 0.2);
+  border-radius: 13px;
+  background: rgba(56, 226, 207, 0.07);
+  color: var(--accent);
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.card-number {
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  color: #526278;
+  font-size: 12px;
+}
+
+.service-card h3 {
+  margin-top: 26px;
+  font-size: 19px;
+}
+
+.service-card p {
+  min-height: 90px;
+  margin-top: 10px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text-link:hover {
+  color: var(--accent-hover);
+}
+
+/* ========================================
+   PORTAFOLIO
+   ======================================== */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.portfolio-card {
+  min-width: 0;
+}
+
+.portfolio-preview {
+  position: relative;
+  min-height: 280px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.preview-one {
+  background:
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(56, 226, 207, 0.2),
+      transparent 40%
+    ),
+    #10283A;
+}
+
+.preview-two {
+  background:
+    radial-gradient(
+      circle at 25% 70%,
+      rgba(183, 145, 255, 0.2),
+      transparent 45%
+    ),
+    #201B32;
+}
+
+.preview-label {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  color: #A6B7CA;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.preview-window {
+  position: relative;
+  width: 65%;
+  min-height: 180px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 9px;
+  background: rgba(8, 17, 31, 0.82);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  transform: rotate(-3deg);
+  transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .preview-window {
+  transform: rotate(0) scale(1.04);
+}
+
+.preview-window > span {
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.preview-shape {
+  width: 45%;
+  height: 70px;
+  position: absolute;
+  top: 42px;
+  right: 15px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #38E2CF, #173B4D);
+}
+
+.product-shape {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 45px;
+  right: 25px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C3A6FF, #473763);
+  box-shadow: 0 0 35px rgba(183, 145, 255, 0.2);
+}
+
+.preview-bar {
+  width: 40%;
+  height: 6px;
+  margin-top: 22px;
+  border-radius: 4px;
+  background: #EAF2FC;
+}
+
+.preview-bar.short {
+  width: 27%;
+  margin-top: 8px;
+  background: #64768D;
+}
+
+.portfolio-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 19px 3px;
+}
+
+.portfolio-info h3 {
+  font-size: 16px;
+}
+
+.portfolio-info p {
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.portfolio-arrow {
+  color: var(--accent);
+  font-size: 23px;
+}
+
+.portfolio-disclaimer {
+  margin-top: 15px;
+  color: var(--text);
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ========================================
+   PROCESO DE TRABAJO
+   ======================================== */
+
+.process {
+  background: #0A1524;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.process-item {
+  position: relative;
+  padding-top: 25px;
+  border-top: 1px solid rgba(56, 226, 207, 0.35);
+}
+
+.process-number {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.process-item h3 {
+  margin-top: 14px;
+  font-size: 17px;
+}
+
+.process-item p {
+  margin-top: 10px;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   CONTACTO
+   ======================================== */
+
+.contact {
+  padding: 100px 0;
+}
+
+.contact-box {
+  position: relative;
+  padding: 65px 30px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 226, 207, 0.2);
+  border-radius: 25px;
+  background:
+    radial-gradient(
+      ellipse at 50% 120%,
+      rgba(56, 226, 207, 0.15),
+      transparent 55%
+    ),
+    #0D1A2A;
+  text-align: center;
+}
+
+.contact-box::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: -180px;
+  right: -90px;
+  border: 1px solid rgba(56, 226, 207, 0.15);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(56, 226, 207, 0.025);
+  pointer-events: none;
+}
+
+.contact-box h2 {
+  max-width: 650px;
+  margin-inline: auto;
+}
+
+.contact-box > p {
+  max-width: 530px;
+  margin: 17px auto 25px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.contact-box .contact-note {
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-size: 11px;
+}
+
+/* ========================================
+   PIE DE PÁGINA
+   ======================================== */
+
+.footer {
+  border-top: 1px solid var(--border);
+  background: #060D17;
+}
+
+.footer-content {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer .brand {
+  font-size: 16px;
+}
+
+.footer .brand-icon {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+}
+
+.footer p,
+.back-top {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.back-top:hover {
+  color: var(--accent);
+}
+
+/* ========================================
+   ANIMACIONES
+   ======================================== */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   TABLETS
+   ======================================== */
+
+@media (max-width: 900px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .nav-menu {
+    gap: 17px;
+  }
+
+  .hero-grid {
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .services-grid {
+    gap: 14px;
+  }
+
+  .service-card {
+    padding: 25px 18px;
+  }
+
+  .service-card p {
+    min-height: 115px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 35px;
+  }
+}
+
+/* ========================================
+   MÓVILES
+   ======================================== */
+
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 32px, var(--container));
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .navbar {
+    min-height: 70px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 16px 18px;
+    border-bottom: 1px solid var(--border);
+    background: #0B1625;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--transition),
+      transform var(--transition),
+      visibility var(--transition);
+  }
+
+  .nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 13px 10px;
+  }
+
+  .nav-menu .nav-cta {
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .menu-toggle.active span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 65px 0 75px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 10vw, 50px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-note {
+    align-items: flex-start;
+    line-height: 1.7;
+  }
+
+  .hero-note .status-dot {
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .hero-visual {
+    margin-inline: 3px;
+  }
+
+  .browser-card {
+    transform: none;
+  }
+
+  .badge-top {
+    right: -5px;
+  }
+
+  .badge-bottom {
+    left: -5px;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .section-heading h2,
+  .contact-box h2 {
+    font-size: 32px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .service-card {
+    padding: 25px;
+  }
+
+  .service-card p {
+    min-height: auto;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .portfolio-preview {
+    min-height: 240px;
+  }
+
+  .preview-window {
+    width: 75%;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .process-item {
+    padding-top: 18px;
+  }
+
+  .contact {
+    padding: 65px 0;
+  }
+
+  .contact-box {
+    padding: 45px 20px;
+  }
+
+  .contact-box .btn {
+    width: 100%;
+  }
+
+  .footer-content {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+/* ========================================
+   ACCESIBILIDAD
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================
+   ORBIX DIGITAL — MEJORA VISUAL V2
+   ======================================== */
+
+/* Fondo tecnológico más profundo */
+.hero {
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(56, 226, 207, 0.07),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 85% 55%,
+      rgba(42, 102, 160, 0.12),
+      transparent 42%
+    ),
+    #08111F;
+}
+
+/* Cuadrícula sutil de fondo */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.17;
+
+  background-image:
+    linear-gradient(
+      rgba(56, 226, 207, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(56, 226, 207, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 42px 42px;
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 30%,
+    black 80%,
+    transparent
+  );
+}
+
+/* Título con mejor presencia */
+.hero h1 {
+  text-wrap: balance;
+  text-shadow: 0 5px 35px rgba(0, 0, 0, 0.18);
+}
+
+.hero h1 .accent {
+  display: inline-block;
+  background: linear-gradient(
+    100deg,
+    #38E2CF,
+    #8BF5E8
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Botones con respuesta visual */
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-primary {
+  box-shadow:
+    0 8px 25px rgba(56, 226, 207, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 12px 32px rgba(56, 226, 207, 0.23);
+}
+
+/* Efecto de brillo en las tarjetas */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 226, 207, 0.045),
+    transparent
+  );
+
+  transform: skewX(-18deg);
+  transition: left 0.65s ease;
+  pointer-events: none;
+}
+
+.service-card:hover::before {
+  left: 150%;
+}
+
+/* Portafolio más elegante */
+.portfolio-preview {
+  isolation: isolate;
+}
+
+.preview-one::after,
+.preview-two::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04),
+    transparent 50%
+  );
+}
+
+/* Encabezado más definido */
+.header {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Animación suave para el mockup */
+.browser-card {
+  will-change: transform;
+}
+
+/* Mejor respuesta táctil */
+@media (hover: none) {
+  .service-card:hover {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* Accesibilidad: respetar preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .browser-card,
+  .floating-badge {
+    animation: none !important;
+  }
+
+  .service-card::before {
+    display: none;
+  }
+}
+
+
+/* ========================================
+   ORBIX DIGITAL — INTERACCIONES PREMIUM
+   ======================================== */
+
+/* Barra de progreso superior */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #38E2CF,
+    #8BF5E8
+  );
+  box-shadow: 0 0 12px rgba(56, 226, 207, 0.4);
+  pointer-events: none;
+}
+
+/* Aparición más elegante */
+.reveal {
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Entrada escalonada de las tarjetas */
+.services-grid .service-card:nth-child(2),
+.process-grid .process-item:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.services-grid .service-card:nth-child(3),
+.process-grid .process-item:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.process-grid .process-item:nth-child(4) {
+  transition-delay: 260ms;
+}
+
+/* Efecto de enfoque en botones y enlaces */
+.btn:focus-visible,
+.nav-menu a:focus-visible,
+.text-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 900;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 52px;
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  background: var(--accent);
+  color: var(--bg);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(56, 226, 207, 0.22);
+}
+
+.whatsapp-float span {
+  font-size: 20px;
+}
+
+@media (max-width: 680px) {
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+    min-height: 48px;
+    padding: 0 15px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .whatsapp-float {
+    transition: none !important;
+  }
+}
+
+/* ========================================
+   ORBIX DIGITAL — PORTAFOLIO V3
+   ======================================== */
+
+.portfolio-project {
+  display: block;
+  border-radius: var(--radius);
+  outline-offset: 5px;
+}
+
+.portfolio-project:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+.portfolio-preview {
+  min-height: 320px;
+  padding: 38px 20px 24px;
+}
+
+.preview-three {
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      rgba(56, 226, 207, 0.15),
+      transparent 42%
+    ),
+    #14263A;
+}
+
+.demo-site {
+  position: relative;
+  width: 90%;
+  max-width: 350px;
+  min-height: 220px;
+  padding: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 9px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+}
+
+.portfolio-project:hover .demo-site {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.demo-business {
+  background: #101F25;
+  color: #F6F3E9;
+}
+
+.demo-store {
+  background: #F2EEE7;
+  color: #191919;
+}
+
+.demo-personal {
+  background: #10252A;
+  color: #F4F7F5;
+}
+
+.demo-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(128,150,160,0.25);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.demo-menu {
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.demo-business-content,
+.demo-store-content,
+.demo-personal-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 22px;
+}
+
+.demo-kicker {
+  color: var(--accent);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.demo-site h3 {
+  margin-top: 10px;
+  font-size: clamp(19px, 3vw, 27px);
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+}
+
+.demo-mini-button {
+  display: inline-block;
+  margin-top: 17px;
+  padding: 7px 9px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.demo-decoration {
+  position: absolute;
+  right: -25px;
+  bottom: -55px;
+  width: 145px;
+  height: 145px;
+  border: 1px solid rgba(56,226,207,0.5);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 15px rgba(56,226,207,0.04),
+    0 0 0 30px rgba(56,226,207,0.03);
+}
+
+.demo-store-content {
+  padding-top: 17px;
+}
+
+.demo-store .demo-kicker {
+  color: #6A665E;
+}
+
+.demo-store h3 {
+  font-size: 23px;
+}
+
+.demo-product {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+}
+
+.demo-product-ring {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  border: 1px solid #C2B6A3;
+  border-radius: 50%;
+}
+
+.demo-product-device {
+  width: 34px;
+  height: 65px;
+  border: 3px solid #333B42;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #788A91, #D4D8D4);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: rotate(12deg);
+}
+
+.demo-store .demo-mini-button {
+  background: #191919;
+  border-color: #191919;
+  color: #F2EEE7;
+}
+
+.demo-personal-content {
+  padding-top: 25px;
+}
+
+.demo-personal-content p {
+  margin-top: 8px;
+  color: #B6C9C6;
+  font-size: 9px;
+}
+
+.project-tag {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 5px;
+  background: rgba(8,17,31,0.85);
+  color: #E1EBF3;
+  font-size: 8px;
+}
+
+.portfolio-info h3 {
+  transition: color 0.25s ease;
+}
+
+.portfolio-card:hover .portfolio-info h3 {
+  color: var(--accent);
+}
+
+.portfolio-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.portfolio-cta p {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.portfolio-disclaimer {
+  line-height: 1.8;
+}
+
+@media (max-width: 680px) {
+  .portfolio-preview {
+    min-height: 285px;
+  }
+
+  .demo-site {
+    width: 95%;
+    min-height: 210px;
+  }
+
+  .portfolio-cta {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .portfolio-cta .btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-site {
+    transition: none;
+  }
+}
+
+/* ========================================
+   ORBIX DIGITAL — PRECIOS Y PAQUETES
+   ======================================== */
+
+.pricing {
+  background: #0A1524;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px 23px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #0D1929;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 226, 207, 0.4);
+}
+
+.pricing-featured {
+  border-color: rgba(56, 226, 207, 0.55);
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(56, 226, 207, 0.09),
+      transparent 60%
+    ),
+    #0D1929;
+}
+
+.pricing-label {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.pricing-card h3 {
+  margin-top: 18px;
+  font-size: 21px;
+}
+
+.pricing-price {
+  margin-top: 16px;
+  font-size: clamp(27px, 3vw, 35px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.pricing-price span {
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.pricing-description {
+  min-height: 76px;
+  margin-top: 14px;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.pricing-features {
+  display: grid;
+  gap: 13px;
+  margin: 20px 0 25px;
+  color: #C4D0DF;
+  font-size: 12px;
+}
+
+.pricing-features li {
+  line-height: 1.6;
+}
+
+.pricing-button {
+  width: 100%;
+  margin-top: auto;
+  font-size: 12px;
+}
+
+.pricing-note {
+  max-width: 760px;
+  margin: 25px auto 0;
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .pricing-description {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-card {
+    transition: none;
+  }
+}
+
+
+/* ========================================
+   ORBIX DIGITAL — FORMULARIO DE CLIENTES
+   ======================================== */
+
+.contact-form-box {
+  text-align: left;
+}
+
+.contact-form-box > .eyebrow,
+.contact-form-box > h2,
+.contact-form-box > p {
+  display: block;
+}
+
+.contact-form-box > h2 {
+  text-align: center;
+}
+
+.contact-form-box > .eyebrow,
+.contact-form-box > p {
+  text-align: center;
+}
+
+.lead-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 720px;
+  margin: 35px auto 0;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 49px;
+  padding: 13px 14px;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 9px;
+  outline: none;
+  background: #081523;
+  color: var(--white);
+  font: inherit;
+  font-size: 13px;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #78899D;
+}
+
+.form-field select {
+  color-scheme: dark;
+}
+
+.form-field textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56,226,207,0.08);
+}
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.7;
+  cursor: pointer;
+}
+
+.form-consent input {
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+}
+
+.form-submit {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.form-privacy {
+  grid-column: 1 / -1;
+  margin: -8px 0 0 !important;
+  color: var(--text);
+  font-size: 11px !important;
+  line-height: 1.8;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .lead-form {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .form-field-full,
+  .form-submit,
+  .form-privacy {
+    grid-column: auto;
+  }
+
+  .contact-form-box {
+    padding: 35px 18px;
+  }
+}
+
+/* ===== PREGUNTAS FRECUENTES ===== */
+
+.faq {
+    padding: 90px 0;
+    background: #0D1929;
+}
+
+.faq-list {
+    max-width: 850px;
+    margin: 40px auto 0;
+    display: grid;
+    gap: 14px;
+}
+
+.faq-item {
+    background: #101F30;
+    border: 1px solid rgba(167, 182, 201, 0.15);
+    border-radius: 14px;
+    padding: 0 22px;
+    transition: border-color 0.3s ease,
+                background 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(56, 226, 207, 0.5);
+}
+
+.faq-item[open] {
+    border-color: #38E2CF;
+    background: rgba(16, 31, 48, 0.95);
+}
+
+.faq-item summary {
+    position: relative;
+    padding: 22px 32px 22px 0;
+    color: #F5F8FC;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #38E2CF;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-item p {
+    margin: 0;
+    padding: 0 0 22px;
+    color: #A7B6C9;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .faq {
+        padding: 65px 0;
+    }
+
+    .faq-item {
+        padding: 0 16px;
+    }
+
+    .faq-item summary {
+        font-size: 0.94rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-item {
+        transition: none;
+    }
+}
+/* Control del tamaño de la imagen de vista previa */
+img[src="img/orbix-preview.png"] {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 25px auto;
+    object-fit: contain;
+    border-radius: 16px;
+}
